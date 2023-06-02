@@ -6,31 +6,32 @@
 <body>
 
 <?php
-    $paczki = $_POST['paczki'];
-    $grzebien = $_POST['grzebien'];
-    $suma = 0.99*$paczki + 1.50*$grzebien;
+    $donut = $_POST['donut'];
+    $bread = $_POST['bread'];
+    $apple_pie = $_POST['applepie'];
+    $together = 0.99*$donut + 1.50*$bread + 10.50*$apple_pie;
 echo<<<END
 
-    <h2> Podsumowanie zamówienia </h2>
+    <h2> Summary of your order </h2>
 
-    <table border="1" cellpadding="10" cellspacing="0">w
+    <table border="1" cellpadding="10" cellspacing="0">
     <tr>
-        <td>Paczek (0.99 zł/szt</td><td>$paczki</td>
+        <td>Donuts (0.99 zl/pcs)</td><td>$donut</td>
     </tr>
     <tr>
-        <td>Grzebien (1.50 zł/szt)</td><td>$grzebien</td>
+        <td>Bread (1.50 zl/pcs)</td><td>$bread</td>
     </tr>
     <tr>
-        <td>SUMA</td><td>$suma zł </td>
+        <td>Apple pie (10.50 zl/pcs)</td><td>$apple_pie</td>
+    </tr>
+    <tr>
+        <td>Together to pay</td><td>$together zł </td>
     </tr>
     </table>
-    <br> <a href='index.php'> Powrót </a>
+    <br> <a href='index.php'> Go back </a>
 END;
 
-
 ?>
-
-
 </body>
 </head>
 </html>
