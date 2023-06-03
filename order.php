@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Podsumowanie zamówienia</title>
+    <title>Summary order</title>
 <body>
 
 <?php
@@ -25,7 +25,7 @@ echo<<<END
         <td>Apple pie (10.50 zl/pcs)</td><td>$apple_pie</td>
     </tr>
     <tr>
-        <td>Together to pay</td><td>$together zł </td>
+        <td>Together to pay</td><td>$together zl </td>
     </tr>
     </table>
     <br> <a href='index.php'> Go back </a>
