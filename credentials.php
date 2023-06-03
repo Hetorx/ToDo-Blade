@@ -1,7 +1,7 @@
 <?php
     require_once "connectdb.php";
 
-    $connect= new mysqli($host, $db_user, $db_password, $db_name);
+    $connect = new mysqli($host, $db_user, $db_password, $db_name);
 
     if ($connect->connect_errno !=0)
     {
@@ -17,15 +17,16 @@
         {
             $users_count=$result->num_rows;
             if($users_count>0){
+                $row = $result->fetch_assoc();
+                $user = $row['login'];
 
+                $result->close();
+                echo $user;
             } 
             else{
-
+                echo "Something went wrong, please try again!";
             }
         }
-
-        echo 'It Works';
-
         $connect->close();
 
     }
