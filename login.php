@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Konsola Logowania</title>
+    <title>Log in console</title>
 <body>
     <form action="console.php" method="post">
         Login: </br>
