@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <title>Log in console</title>
 <body>
-    <form action="console.php" method="post">
+    <form action="credentials.php" method="post">
         Login: </br>
         <input type="text" name="login"/></br></br>
         Password: </br>
