@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 
-// Route::get('pages/', 'PageController@index');
-// Route::get('pages/{slug}', 'PageController@show');
+Route::get('pages/', 'PageController@index');
+Route::get('pages/{slug}', 'PageController@show');
 
 
 Route::get('pages/{slug}', function ($slug) {
