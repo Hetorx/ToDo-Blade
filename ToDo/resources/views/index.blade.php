@@ -10,3 +10,8 @@
     @endforeach
 
 @endsection
+
+
+<form action="/create" method="get">
+    <button class="btn btn-primary"> Create new task</button>
+</form>

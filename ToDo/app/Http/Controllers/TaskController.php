@@ -21,13 +21,21 @@ class TaskController extends Controller
         return view('show', compact('task'));
     }
 
-    public function create(){
+    public function create() {
 
         return view('create');
     }
 
     public function store(Request $request) {
-        dd($request);
+        $request->validate([
+            'title' => 'required',
+            'category' => 'required',
+            'content' => 'required',
+        ]);
+
+        Task::create($request->all());
+
+        return redirect('/index');
 
     }
 }

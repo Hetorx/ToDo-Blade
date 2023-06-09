@@ -4,7 +4,7 @@ use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 #main website
-Route::get('/', [TaskController::class, 'index']);
+Route::get('/task', [TaskController::class, 'index']);
 
 #route to specified task
 Route::get('/task/{slug}', [TaskController::class, 'show']);
@@ -13,4 +13,4 @@ Route::get('/task/{slug}', [TaskController::class, 'show']);
 Route::get('/create', [TaskController::class, 'create']);
 
 #store a new task
-Route::post('/create', [TaskController::class, 'store']);
+Route::post('/task', [TaskController::class, 'store']);

@@ -4,7 +4,7 @@
 
 @section ('content')
 @csrf
-<form action='/task' method="POST">
+<form action='/store' method="POST">
     <div class="form-group">
         <label for="">Title</label>
         <input type="text" class="form-control" name="title">
@@ -19,7 +19,9 @@
     </div>
     <button class="btn btn-primary"> Add a new task </button>
 </form>
-<form action="/" method="POST">
-    <button class="btn btn-primary" action='/' method="get"> Go back to main page</button>
-</form>
+
 @endsection
+
+<form action="/task" method="get">
+    <button class="btn btn-primary" action='/task' method="get"> Go back to see all tasks</button>
+</form>
