@@ -12,6 +12,6 @@
 @endsection
 
 
-<form action="/create" method="get">
+<form action="/tasks/create" method="get">
     <button class="btn btn-primary"> Create new task</button>
 </form>
