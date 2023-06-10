@@ -9,5 +9,5 @@ class Task extends Model
 {
     protected $table = 'tasks';
 
-    protected $fillable = ['title', 'category', 'content'];
+    protected $fillable = ['title', 'category', 'content', 'is_completed'];
 }

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('category');
             $table->text('content');
+            $table->tinyInteger('is_completed') -> default(0);
             $table->timestamps();
         });
     }

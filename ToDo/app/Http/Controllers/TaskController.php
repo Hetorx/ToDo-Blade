@@ -38,4 +38,9 @@ class TaskController extends Controller
         return redirect('/tasks');
 
     }
+
+    public function done() {
+        $done = Task::all();
+        return view ('done', compact('done'));
+    }
 }

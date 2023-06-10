@@ -3,14 +3,17 @@
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
-#main website
+# Główna strona internetowa
 Route::get('/tasks', [TaskController::class, 'index']);
 
-#route to specified task
-Route::get('/task/{slug}', [TaskController::class, 'show']);
+# Trasa do konkretnego zadania
+Route::get('/tasks/{slug}', [TaskController::class, 'show']);
 
-#route to create task
-Route::get('/tasks/create', [TaskController::class, 'create']);
+# Trasa do tworzenia zadania
+Route::get('/create', [TaskController::class, 'create']);
 
-#store a new task
-Route::post('/tasks', [TaskController::class, 'store']);
+Route::post('/task', [TaskController::class, 'store']);
+
+Route::get('/done', [TaskController::class, 'done'])
+
+?>

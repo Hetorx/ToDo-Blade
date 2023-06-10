@@ -48,7 +48,6 @@
 
 <form action="{{ url('/tasks') }}" method="POST">
     @csrf
-
     <div class="form-group">
         <label for="">Title</label>
         <input type="text" class="form-control" name="title">
@@ -63,10 +62,11 @@
     </div>
     <div class="d-flex justify-content-between">
         <button class="btn btn-primary"> Add a new task </button>
-        <form action="/tasks" method="get">
-            <button class="btn btn-back" action='/tasks' method="get"> Go back to see all tasks</button>
-        </form>
     </div>
+</form>
+
+<form action="/tasks" method="get">
+    <button class="btn btn-back" action='/tasks' method="get"> Go back to see all tasks</button>
 </form>
 
 @endsection
