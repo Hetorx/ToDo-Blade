@@ -30,7 +30,7 @@ To-do App is a web application built with Laravel framework that allows you to m
 
 7. Start the development server:
 
-8. Access the application in your web browser at `http://localhost:8000`.
+8. Access the application in your web browser at `http://localhost:8000/tasks`.
 
 ## Usage
 
