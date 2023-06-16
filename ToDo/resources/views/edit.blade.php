@@ -26,8 +26,4 @@
 @endsection
 <hr />
 <a href="/tasks" class="btn btn-default">View All Tasks</a>
-<a href="/tasks/{{ $task->id }}" class="btn btn-default">Edit Task</a>
-<a href="/tasks/delete/{{ $task->id }}" class="btn btn-danger">Delete Task</a>
-<a href="/tasks/{{ $task->id }}/edit" class="btn btn-warning">Edit Task</a>
-<a href="/tasks/{{ $task->id }}/delete" class="btn btn-info">Delete Task</a>
 </div>
