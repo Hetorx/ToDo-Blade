@@ -15,8 +15,8 @@
                     <input type="text" class="form-control" name="title" id="title" placeholder="Title" value="{{ $task->title }}">
                 </div>
                 <div class="form-group">
-                    <label for="description">Content</label>
-                    <textarea class="form-control" name="description" id="description" placeholder="Description">{{ $task->description }}</textarea>
+                    <label for="content">Content</label>
+                    <textarea class="form-control" name="content" id="content" placeholder="content">{{ $task->content }}</textarea>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Submit</button>
