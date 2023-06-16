@@ -10,11 +10,11 @@
         border: 1px solid #e6e6e6;
     }
 </style>
-@section ('title', $task->title)
-@section ('content')
-<div class="container">
-    <h1>{{$task->title}}</h1>
-    <p> {{$task->content}} </p>
-</div>
+@section('title', $task->title)
+@section('content')
+    <div class="container">
+        <h1>{{ $task->title }}</h1>
+        <p> {{ $task->content }} </p>
+    </div>
 
 @endsection

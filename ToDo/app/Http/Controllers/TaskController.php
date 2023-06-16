@@ -10,25 +10,26 @@ class TaskController extends Controller
     public function index()
     {
         $remainingTasks = Task::where('is_completed', 0)->get();
-    
+
         return view('index', compact('remainingTasks'));
     }
-    
 
-    public function show($id) {
+    public function show($id)
+    {
 
         $task = Task::findOrFail($id);
 
         return view('show', compact('task'));
     }
 
-    public function create() {
+    public function create()
+    {
 
         return view('create');
     }
 
-
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $validatedData = $request->validate([
             'title' => 'required',
@@ -39,7 +40,6 @@ class TaskController extends Controller
         Task::create($validatedData);
 
         return redirect('/tasks');
-
     }
 
     public function updateStatus(Request $request)
@@ -57,14 +57,15 @@ class TaskController extends Controller
     }
 
 
-    public function done(){
+    public function done()
+    {
 
         $completedTasks = Task::where('is_completed', 1)->get();
         return view('done', compact('completedTasks'));
-    
-}
+    }
 
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $task = Task::findOrFail($id);
         return view('edit', compact('task'));
@@ -82,8 +83,4 @@ class TaskController extends Controller
 
         return redirect('/tasks' . $task->slug);
     }
-
-    
-
-    
 }
