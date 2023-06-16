@@ -34,13 +34,8 @@ To-do App is a web application built with Laravel framework that allows you to m
 
 ## Usage
 
-- Register a new account using the registration form.
-- Log in with your credentials.
 - Create, edit, and delete tasks.
-- Assign priorities and categories to tasks.
-- Filter and sort tasks using the available options.
-- Mark tasks as completed or pending.
-- Log out when you're done.
+- Mark tasks as completed
 
 ## Contributing
 
