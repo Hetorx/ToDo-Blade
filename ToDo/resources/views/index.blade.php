@@ -1,16 +1,19 @@
 @extends('layouts.app')
 
-@section ('content')
+@section('content')
 
-<h1>Here are your tasks!</h1>
+<h1>Here are your tasks to do!</h1>
+@if ($remainingTasks->isEmpty())
+<p>No tasks remaining.</p>
+@endif
+<form action="{{ url('/done') }}" method="POST">
 
-<form action="/tasks" method="post">
     @csrf
-
-    @foreach ($tasks as $task)
-        {{$task->id}}.
-        {{$task->title}} 
-        <input type="checkbox" name="task_ids[]" value="{{$task->id}}" {{ $task->is_completed ? 'checked' : '' }} /><br>
+    
+    @foreach ($remainingTasks as $task)
+        <span>{{$task->id}}.</span>
+        <a href="{{ route('tasks.edit', $task->id) }}">{{ $task->title }}</a>
+        <input type="checkbox" name="completed[]" value="{{ $task->id }}"><br/>
     @endforeach
 
     <button type="submit" class="btn btn-primary">Update Status</button>
@@ -23,5 +26,6 @@
 <form action="/done" method="get">
     <button class="btn btn-primary">Show done tasks</button>
 </form>
+
 
 @endsection
