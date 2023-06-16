@@ -1,9 +1,16 @@
 @extends('layouts.app')
 
-@section ('title','Create a new task!')
+@section('content')
 
-@section ('content')
 <style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
     .form-group {
         margin-bottom: 20px;
     }
@@ -12,61 +19,60 @@
         font-weight: bold;
     }
 
-    textarea {
+    .form-control {
+        width: 100%;
+        max-width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea.form-control {
         height: 150px;
     }
 
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-
-    .btn-primary:hover {
-        background-color: #0069d9;
-        border-color: #0062cc;
-    }
-
-    .btn-primary:focus {
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 10px;
     }
 
     .btn-back {
-        background-color: #6c757d;
-        border-color: #6c757d;
         margin-top: 20px;
-    }
-
-    .btn-back:hover {
-        background-color: #5a6268;
-        border-color: #545b62;
-    }
-
-    .btn-back:focus {
-        box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
     }
 </style>
 
-<form action="{{ url('/tasks') }}" method="POST">
-    @csrf
-    <div class="form-group">
-        <label for="">Title</label>
-        <input type="text" class="form-control" name="title">
-    </div>
-    <div class="form-group">
-        <label for="">Category</label>
-        <input type="text" class="form-control" name="category">
-    </div>    
-    <div class="form-group">
-        <label for="">Content</label>
-        <textarea name="content" class="form-control"></textarea>
-    </div>
-    <div class="d-flex justify-content-between">
-        <button class="btn btn-primary"> Add a new task </button>
-    </div>
-</form>
+<div class="container">
+    <h1>Create a new task!</h1>
 
-<form action="/tasks" method="get">
-    <button class="btn btn-back" action='/tasks' method="get"> Go back to see all tasks</button>
-</form>
+    <form action="{{ url('/tasks') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="">Title</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        <div class="form-group">
+            <label for="">Category</label>
+            <input type="text" class="form-control" name="category">
+        </div>    
+        <div class="form-group">
+            <label for="">Content</label>
+            <textarea name="content" class="form-control"></textarea>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-primary">Add a new task</button>
+        </div>
+    </form>
+
+    <form action="/tasks" method="get">
+        <button class="btn btn-primary btn-back">Go back to see all tasks</button>
+    </form>
+</div>
 
 @endsection
