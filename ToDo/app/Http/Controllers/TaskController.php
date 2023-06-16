@@ -83,4 +83,12 @@ class TaskController extends Controller
 
         return redirect('/tasks' . $task->slug);
     }
+
+    public function destroy($id)
+    {
+        $task = Task::findOrFail($id);
+        $task->delete();
+
+        return redirect('/tasks')->with('success', 'Task has been deleted.');
+    }
 }

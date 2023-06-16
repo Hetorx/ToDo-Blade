@@ -64,7 +64,15 @@
                         </div>
                         <div class="form-group btn-container">
                             <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        <div
+                            style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-top:10px">
                             <a href="/tasks" class="btn btn-default">View All Tasks</a>
+                            <form action="/tasks/{{ $task->id }}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="btn btn-danger">Delete Task</button>
+                            </form>
                         </div>
                     </form>
                 </div>

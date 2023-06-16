@@ -18,3 +18,7 @@ Route::get('/done', [TaskController::class, 'done']);
 Route::get('/tasks/{id}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
 
 Route::put('/tasks/{slug}', [TaskController::class, 'update']);
+
+Route::delete('/tasks/{id}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+
+
